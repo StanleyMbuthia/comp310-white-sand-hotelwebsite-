@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport "content="width=device-width,initial-scale=1.0">
+        <title>Worldcup Hotel  booking site </title> 
+           <link rel="stylesheet" href="style.css">
+
+           <style type="text/css">
+              #slider{
+                overflow:hidden;
+              }
+              #slider figure{
+                position:relative;
+                width:500%;
+                margin:0;
+                left:0;
+                animation:10s slider infinite; 
+
+              }
+           </style>
+
+
+    </head>
+        <body>
+                
+
+                <div class ="container">
+                    <div class="navbar">
+                          
+                       <div class="logo">
+                        <img src="image/Retro vector gold frames luxury decorative logo template.jpg" alt="logo">
+                       </div>
+                           <nav>
+                            <ul class="nav-area">
+                                
+                                 
+                                <li><a href="mainweb.html">HOME</a></li>
+                                <li><a href="about.html">ABOUT</a></li>
+                                <li><a href="services.html">SERVICES</a></li>
+                                <li><a href="contact.html">CONTACT</a></li>
+                                <li><a href="login-page.html" style="color: brown;font-size: larger;font-family: Arial, Helvetica, sans-serif;">LOGIN</a></li>
+                            </ul>
+                           </nav>
+                           <img src="" class ="menu-icon 1">
+                    </div>
+                     
+                     <div class="row" >
+                        <div class="col">
+                            <h1 style="color: darkgreen;font-size: xx-large;">WHITE SANDS HOTEL</h1>
+                              <p style="color: azure;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: small;">WHITE SANDS HOTEL The calm and private spaces throughout White sand  Serenity have been dedicated for guests over 16 years. The whole Serenity experience is designed for those seeking a path of reset and reflection. This is a place to escape to, where you can contemplate and embrace lasting lifestyle.</p>
+    
+                              <button type="button">Explore</button>
+    
+                        </div>
+    
+                        <div class="col-2"  >
+                            <div class ="card card1">
+                                <h4>Backyard </h4>
+                                <p>serene and cool</p>
+                            </div>
+    
+                            <div class =" card card2">
+                                <h4>Beach view </h4>
+                                <p>fascinating scene</p>
+                            </div>
+    
+                            <div class ="card card3">
+                                <h4>Rooms for the night</h4>
+                                <p>always comfortable,feel at home</p>
+                            </div>
+    
+                            <div class ="card card4">
+                                <h4>your favourite dishes </h4>
+                                <p>your meal your choice</p>
+                            </div>
+                        </div>
+                        
+                     </div>
+                </div>
+
+
+
+               
+
+
+                <div class="img-slider">
+                    <!-- slide 1 -->
+                    <div class="slide active">
+                        <img src="image/backgroundcarousel.jpg" alt="Class">
+                        <div class="info">
+                            <h2>Never short of class</h2>
+                            <p>
+                                Price is what you pay. Quality is whay you get.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- slide 2 -->
+                    <div class="slide">
+                        <img src="image/yo gottibest.jpg" alt="Off-road">
+                        <div class="info">
+                            <h2>With you on the off-road</h2>
+                            <p>
+                                Ambition is the path to success. Persistence is the vehicle you drive in.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- slide 3 -->
+                    <div class="slide">
+                        <img src="image/kelsey-curtis--27u_GzlAFw-unsplash.jpg" alt="Vintage">
+                        <div class="info">
+                            <h2>We love vintage</h2>
+                            <p>
+                                Old school with some class. Quality never goes out of style.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- slide 4 -->
+                    <div class="slide">
+                        <img src="image/harshil-gudka-RUMElHOebwY-unsplash.jpg" alt="white sand Hotel">
+                        <div class="info">
+                            <h2>Nice vicinity</h2>
+                            <p>
+                                We put you one ride away from a good mood.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- slide 5 -->
+                    <div class="slide">
+                        <img src="image/manuel-moreno-DGa0LQ0yDPc-unsplash.jpg" alt="white sand Hotel">
+                        <div class="info">
+                            <h2>serene and cool view</h2>
+                            <p>
+                                Need a time machine? We got you. Speed is our only vice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="navigation">
+                        <div class="btn active"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                    </div>
+                </div>
+                
+                <script type="text/javascript">
+                    var slides = document.querySelectorAll('.slide');
+                    var btns = document.querySelectorAll('.btn')
+                    let currentSlide = 1;
+                
+                    // Javascript for image slider manual navigation
+                    var manualNav = function(manual){
+                        slides.forEach((slide) => {
+                            slide.classList.remove('active');
+                        });
+                
+                        btns.forEach((btn) => {
+                            btn.classList.remove('active');
+                        });
+                
+                        slides[manual].classList.add('active');
+                        btns[manual].classList.add('active');
+                    }
+                
+                    btns.forEach((btn, i) => {
+                        btn.addEventListener("click", () => {
+                            manualNav(i);
+                            currentSlide = i;
+                        });
+                    });
+                
+                    // Javascript for image slider autoplay navigation
+                    var repeat = function(activeClass){
+                        let active = document.getElementsByClassName('active');
+                        let i = 1;
+                
+                        var repeater = () => {
+                            setTimeout(function(){
+                                [...active].forEach((acticeSlide) => {
+                                    acticeSlide.classList.remove('active');
+                                });
+                                
+                                slides[i].classList.add('active');
+                                btns[i].classList.add('active');
+                                i++;
+                
+                                if(slides.length == i){
+                                    i = 0;
+                                }
+                                if(i >= slides.length){
+                                    return;
+                                }
+                                repeater();
+                            }, 5000);
+                        }
+                        repeater();
+                    }
+                    repeat();
+                </script>
+
+
+                <footer>
+                    <div class="footer-content">
+                        <h3>WHITE SANDS HOTEL</h3>
+                        <p>Simply the best of the best</p>
+                        <p>tranforming AFRICA</p>
+                        <p>Strive for the best</p>
+                        <p>Always at your service</p>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>copyright &copy;2023 WHITE SANDS HOTEL  designed by <span>Stanley Mbuthia</span></p>
+                    </div>
+                </footer>
+    
+    
+
+                
+
+
+
+
+
+        
+
+                
+            
+
+            
+        </body>
+</html>
